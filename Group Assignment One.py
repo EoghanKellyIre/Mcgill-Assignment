@@ -60,7 +60,7 @@ def scenarios():
 #Eoghán
 #-----------------------------------------------------------------------------------------------------------------------------------
 #Using the flightlabs API to get a list of all flights out of YUL for the current day
-url = 'https://app.goflightlabs.com/advanced-flights-schedules?access_key=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiOTE4Y2JhZDk5ZTQwYmI3OGZhMjU3NzUxYTgyODVlMjdhMzdkMDM2MDA2ODI3N2FjMGI3MjI5MDFkMzdiZGJjMDJmOTBlM2UwZjcxZTExOTIiLCJpYXQiOjE2NzgzOTI3ODIsIm5iZiI6MTY3ODM5Mjc4MiwiZXhwIjoxNzEwMDE1MTgyLCJzdWIiOiIyMDQxMCIsInNjb3BlcyI6W119.oVWxj_THXa_8jGquTX_ymPH60OTGXf55SUFUbI5iTyZ8ZRsBLh5zDgtnEUjrhKY-FcTW2lgq2XL82TzleEuvEA&iataCode=YUL&type=departure'
+url = 'https://app.goflightlabs.com/advanced-flights-schedules?access_key=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiN2E2YzJmNjdmMWMxMmZjOTg0YzI0MTU5ZjQ3NTRhOGYxOGM5MDlmNGI2ZDNmNjIyYTgxYWIwZWEyZmE5YjVhNzIzYmIzYzc5NGE0YTk0YjEiLCJpYXQiOjE2Nzg3NDM1OTcsIm5iZiI6MTY3ODc0MzU5NywiZXhwIjoxNzEwMzY1OTk3LCJzdWIiOiIyMDQ1NyIsInNjb3BlcyI6W119.muwqyX4xFrcmjUb-yADVhY6gJXLnPp-Ky3k6SEAi65HQS5k48bHnkyY-OhYXFpHU4m2mmjx5ltM164VinLkeng&iataCode=YUL&type=departure'
 r = requests.get(url, allow_redirects=True)
 search = r.json()
 airline=[]
