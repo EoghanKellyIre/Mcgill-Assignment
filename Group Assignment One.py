@@ -1,7 +1,12 @@
 # -*- coding: utf-8 -*-
 """
-Created on Tue Mar  7 13:40:34 2023
+Created on Mon Mar 13 17:53:52 2023
 
+@author: eogha
+"""
+
+"""
+Created on Tue Mar  7 13:40:34 2023
 @author: Eoghán
 """
 
@@ -18,7 +23,7 @@ def welcomeMessage():
 
 def services():
     print("1 - Flight Information")
-    print("2 - Special Assistance")
+    print("2 - Airport Preparation")
     print("3 - Facilities")
     print("4 - Accomodation")
     print("5 - Transportation")
@@ -191,7 +196,7 @@ def one_3():
 def scenarioOne():
     #Executes the current question
     finished=False
-    print("Which service would you like to ask about.")
+    print("\nWhich service would you like to ask about.")
     print("1 - Finding the gate number for your flight.")
     print("2 - Getting all the flights for the current hour.")
     print("3 - Finding your flight number.")
@@ -222,8 +227,8 @@ def scenarioOne():
 def scenarioTwo():
     #Executes the current question
     finished=False
-    print("Which service would you like to ask about?")
-    print("1 - Finding the current security times for the airport.")
+    print("\nWhich service would you like to ask about?")
+    print("1 - Finding the current security waiting times for the airport.")
     print("2 - Information how long in advance to arrive at the airport.")
     print("3 - Information regarding assistance.")
     #A while loop to not exit until found question or quit
@@ -244,7 +249,7 @@ def scenarioTwo():
             else:
                 raise ValueError('Number not listed')
         except Exception:
-            print("Error")
+            print("Oh! I do not seem to understand")
             print("Try again? (yes/no)")
             ifContinue = input().casefold()
             if ifContinue == 'yes':
@@ -264,7 +269,7 @@ def securityTime():
     title = soup.findAll('td', attrs = {'class':'views-field views-field-php'})
     
     finished=False
-    print("Where are you heading to?")
+    print("\nWhere are you heading to?")
     print("1 - United States?")
     print("2 - Domestic?")
     print("3 - International?")
@@ -286,7 +291,7 @@ def securityTime():
             else:
                 raise ValueError('Number not listed')
         except Exception:
-            print("Error")
+            print("Oh! I do not seem to understand")
             print("Try again? (yes/no)")
             ifContinue = input().casefold()
             if ifContinue == 'yes':
@@ -322,7 +327,7 @@ def assitance():
             else:
                 raise ValueError('Number not listed')
         except Exception:
-            print("Error")
+            print("Oh! I do not seem to understand")
             print("Try again? (yes/no)")
             ifContinue = input().casefold()
             if ifContinue == 'yes':
@@ -342,10 +347,10 @@ def knowMore(subject):
 def travellingWithChild():
     finished=False
     subject='travelling with children'
-    print('Aéroports de Montréal is pleased to offer passengers travelling with young children'\
+    print('Aéroports de Montréal is pleased to offer passengers travelling with young children '\
           'and infants arrangements and services designed to ensure that their airport experience'\
-          'is as pleasant as possible. We also invite you to inquire with your airline as to available'\
-          'onboard services.')
+          ' is as pleasant as possible. We also invite you to inquire with your airline as to available'\
+          ' onboard services.')
     while not finished:
         print("Which do you want to know more about?")
         print("1 - Priority queues?")
@@ -380,7 +385,7 @@ def travellingWithChild():
             else:
                 raise ValueError('Number not listed')
         except Exception:
-            print("Error")
+            print("Oh! I do not seem to understand")
             print("Try again? (yes/no)")
             ifContinue = input().casefold()
             if ifContinue == 'yes':
@@ -424,7 +429,7 @@ def travellingWithPet():
             else:
                 raise ValueError('Number not listed')
         except Exception:
-            print("Error")
+            print("Oh! I do not seem to understand")
             print("Try again? (yes/no)")
             ifContinue = input().casefold()
             if ifContinue == 'yes':
@@ -473,7 +478,7 @@ def travellingForeignStudent():
             else:
                 raise ValueError('Number not listed')
         except Exception:
-            print("Error")
+            print("Oh! I do not seem to understand")
             print("Try again? (yes/no)")
             ifContinue = input().casefold()
             if ifContinue == 'yes':
@@ -519,7 +524,7 @@ def scenarioThree():
     option_2 = ["Cafe","Cafes","Café"]
     option_3 = ["Bars","Bar"]
     option_shop = ["Shopping", "Shopping area", "Shops", "Shoppingarea"]
-    option_services = ["Other Services", "Other","Services", "Otherservices"]
+    option_services = ["Other services", "Other","Services", "Otherservices"]
     option_map = ["Explore the map","Explore","Map"]
     restaurant_list = []
     cafe_list = []
@@ -1028,7 +1033,7 @@ def scenarioFour():
                 if hotel in hotel_list:
                     for i in hotels:
                         if hotels[i]["Name"] == hotel:
-                            print("\nThe price of the hotel selected is:", hotels[i]["Price"]+"CA$")
+                            print("\nThe price of the hotel selected is:", str(hotels[i]["Price"]) +"CA$")
                             done = True
                         else:
                             continue
@@ -1133,18 +1138,18 @@ def scenarioFour():
 def scenarioFive():
     finish = False
     while not finish:
-        user_ans1 = input("\nWould you like to know information about parking or transportation?")
+        user_ans1 = input("\nWould you like to know information about parking or transportation? ")
         if user_ans1.casefold() == "parking":
             finish = True
             done = False
             while not done:
-                user_ans6=input("\nWould you prefer to park indoors or outdoors?")
+                user_ans6=input("\nWould you prefer to park indoors or outdoors? ")
                 if user_ans6.casefold()=="indoors":
                     print("You have chosen idoors.")
                     done = True
                     finished = False
                     while not finished:
-                        user_ans8=input("\nWould you like to know the parking rates or parking options?")
+                        user_ans8=input("\nWould you like to know the parking rates or parking options? ")
                         if user_ans8.casefold()== "parking rates":
                             import pandas as pd
                             data_indoor = {'Options': ['Multilevel', 'Short term'],
@@ -1154,16 +1159,17 @@ def scenarioFive():
                             print(df)
                             finished = True
                         elif user_ans8.casefold()=="parking options":
-                            print("You have chosen parking options"
+                            print("You have chosen parking options\n"
                                   "The parking options are the following: Multilevel or Short term parking (temporarily closed)")
                             finished = True
                         else:
                             print("\nSorry, that is not a valid choice.")
-                elif user_ans6=="outdoors":
+                elif user_ans6.casefold()=="outdoors":
                     print("You have chosen outdoors.")
                     done = True
+                    finished = False
                     while not finished:
-                        user_ans7=input("\nWould you like to know the parking rates or parking options?")
+                        user_ans7=input("\nWould you like to know the parking rates or parking options? ")
                         if user_ans7.casefold()=="parking rates" or user_ans7 == "rates":
                             print("You have chosen parking rates")
                             import pandas as pd
@@ -1191,7 +1197,7 @@ def scenarioFive():
                         finished = True
                         print("You have chosen to learn about the information on buses. ")
                         while True:
-                            user_ans4=input("\nDo you want to know about the rates or the buses ?")
+                            user_ans4=input("\nDo you want to know about the rates or the buses? ")
                             if user_ans4.casefold()=="rates":
                                 print("You have chosen rates."
                                       "The rates for the 747 Express bus cost $11."
@@ -1228,14 +1234,14 @@ def scenarioFive():
                         finished = True
                         print("You have chosen to learn about car rentals.")
                         while True:
-                            user_ans5=input("\nDo you want to know the location or companies of car rentals?")
+                            user_ans5=input("\nDo you want to know the location or the contacts of car rentals?")
                             if user_ans5.casefold()=="location":
                                 print("You have chosen location."
                                       "Please follow signs for 'Ground Transportation Building.'"
                                       "We are located directly inside that facility.  It is approximately a 5-10 minute walk from baggage claim, located in a separate building from the terminal and to the left. ")
                                 break
-                            elif user_ans5.casefold()=="companies":
-                                print("You have chosen companies. Here are the information to contact car rental companies")
+                            elif user_ans5.casefold()=="contacts":
+                                print("You have chosen contacts. Here are the information to contact car rental companies.")
                                 import pandas as pd
                                 car_rentals = {'Company': ['Alamo', 'Avis', 'Budget', 'Dollar', 'Enterprise', 'Hertz', 'National', 'Thrifty'],
                                 'Phone': ['514 633-1222', '514 636-1902', '514 636-0052', '514 636-9530', '514 631-4545', '514 636-9530', '514 636-9030', '514 636-9530'],
@@ -1281,10 +1287,10 @@ def checkRating():
 welcomeMessage()
 finished = not True
 while not finished:
-    print("Which service would you like to use?")
+    print("\nWhich service would you like to use?")
     services()
     scenarios()
-    ifOther = input("Is there any other assistance required?")
+    ifOther = input("Is there any other assistance required? ")
     if ifOther.casefold() == "yes":
         print("processing...")
     else:
