@@ -1123,7 +1123,129 @@ def select_star():
     print(recommended_hotels3)
 #-----------------------------------------------------------------------------------------------------------------------------------
 def scenarioFive():
-    return
+     while True:
+        user_ans1 = input("Would you like the information about parking, transportation, or go back? ")
+        if user_ans1 == "parking":
+            while True:
+                user_ans6=input("Would you prefer to park indoors, outdoors, or go back?")
+                if user_ans6=="indoors":
+                    print("You have chosen idoors.")
+                    while True:
+                        user_ans8=input("Would you like to know the parking rates or parking options?")
+                        if user_ans8== "parking rates":
+                            print("_____")
+                        elif user_ans8=="parking options":
+                            print("____")
+                        elif user_ans8=="go back":
+                            print("Sorry, that is not a valid choice. Please choose between parking rates, parking options, or go back.")
+                elif user_ans6=="outdoors":
+                    print("You have chosen outdoors.")
+                    while True:
+                        user_ans7=input("Would you like to know the parking rates or parking options?")
+                        if user_ans7=="parking rates":
+                            print("You have chosen parking rates")
+                            import pandas as pd
+                                
+                            data = {'Options': ['Valet Parc', 'Hotel Parc', 'Econo Parc', 'AeroParc'],
+                                    '20 min': ['-', '$10', '-', '-'],
+                                    '1 day': ['$50', '$45', '$30', '$30']}
+                            df = pd.DataFrame(data)
+                            print(df)
+
+                            break
+                        elif user_ans7=="parking options":
+                            print("You have chosen parking options"
+                                  "The parking options are the following: valet parking, econoparc or aeroparc")
+                            break
+                        elif user_ans7=="go back":
+                            break
+                        else:
+                            print("Sorry, that is not a valid choice. Please choose between parking rates, parking options, or go back.")
+                    break 
+                elif user_ans6=="go back":
+                    break
+                else:
+                    print("Sorry, that is not a valid choice. Please choose between rates, buses, or go back.")
+        elif user_ans1 == "transportation":
+            print("You have chosen to learn the information about transportation.")
+            
+            while True:
+                    user_ans2 = input("Would you like the information about buses, taxis, car rentals, or go back? ")
+                    if user_ans2=="buses":
+                        print("You have chosen to learn about the information on buses. ")
+                        while True:
+                            user_ans4=input("Do you want to know about the rates, the buses, or go back?")
+                            if user_ans4=="rates":
+                                print("You have chosen rates."
+                                      "The rates for the 747 Express bus cost $11."
+                                      "The regular service for buses #204, 209, and 460 cost $3.50.")
+                                break
+                            elif user_ans4=="buses":
+                                print("You have chosen buses."
+                                      "There are 2 different types of buses."
+                                      "First, there is the 747 Express bus which goes downtown and connects the airport to 11 stops in Montreal." 
+                                      "It is in continuous service."
+                                      "Second, there is the regular service from the Society of Transportation in Montreal #204, 209, and 460 that connects the airport to some places in Montreal.")
+                                break
+                            elif user_ans4=="go back":
+                                break
+                            else:
+                                print("Sorry, that is not a valid choice. Please choose between rates, buses, or go back.")
+                    elif user_ans2 == "taxis":
+                        print("You have chosen to learn about the information on taxis. To learn about the rates, please select where you plan on going.")
+                        while True:
+                            user_ans3=input("Are you go going downtown or another location?")
+                            if user_ans3=="downtown":
+                                print("You have chosen downtown."
+                                      "Between 5AM and 11PM, the flat rate is $48.40."
+                                      "Outside of these hours, the flat rate is $55.65")
+                                break
+                            elif user_ans3=="other locations":
+                                print("You have chosen other locations."
+                                      "Between 5AM and 11PM, the rate is $4.10/km and the minimum charge is $20.60."
+                                      "Outside of these hours, $4.70/km and the minimum charge is $23.70")
+                                break
+                            elif user_ans3=="go back":
+                                break
+                            else:
+                                print("Sorry, that is not a valid choice. Please choose between downtown and other locations")
+                            
+                    elif user_ans2 == "car rentals":
+                        print("You have chosen to learn about car rentals.")
+                        while True:
+                            user_ans5=input("Do you want to know the location or companies of car rentals?")
+                            if user_ans5=="location":
+                                print("You have chosen location."
+                                      "Please follow signs for 'Ground Transportation Building.'"
+                                      "We are located directly inside that facility.  It is approximately a 5-10 minute walk from baggage claim, located in a separate building from the terminal and to the left. ")
+                                break
+                            elif user_ans5=="companies":
+                                print("You have chosen companies. Here are the information to contact car rental companies")
+                                import pandas as pd
+
+                                car_rentals = {'Company': ['Alamo', 'Avis', 'Budget', 'Dollar', 'Enterprise', 'Hertz', 'National', 'Thrifty'],
+                                'Phone': ['514 633-1222', '514 636-1902', '514 636-0052', '514 636-9530', '514 631-4545', '514 636-9530', '514 636-9030', '514 636-9530'],
+                                'Toll-Free': ['1 800 462-5266', '1 800 879-2847', '1 800 268-8970', '1 800 800-4000', '1 800 736-8222', '1 800 263-0678', '1 800 227-7368', '1 800 847-4389']}
+
+                                df = pd.DataFrame(car_rentals)
+                                print(df)
+                                
+                                break
+                            elif user_ans5=="go back":
+                                break
+                            else:
+                                print("Sorry, that is not a valid choice. Please choose between downtown and other locations")
+                    elif user_ans2 == "go back":
+                        break
+                    else:
+                        print("Sorry, that is not a valid choice. Please choose between buses, taxis, car rentals, or go back.")
+    
+        elif user_ans1 == "go back":
+            break
+        else:
+            print("Sorry, that is not a valid choice. Please choose between parking, transportation, or go back.")
+
+return
 #-----------------------------------------------------------------------------------------------------------------------------------
 
 def endMessage():
